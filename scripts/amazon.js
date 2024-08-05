@@ -1,5 +1,6 @@
 import {cart, addToCart} from '../data/cart.js';
 import { products } from '../data/products.js';
+import { moneyCents } from '../data/money.js';
 let elementHTML = '';
 products.forEach((value) => {
     const html = `
@@ -22,7 +23,7 @@ products.forEach((value) => {
           </div>
 
           <div class="product-price">
-            $${(value.priceCents / 100).toFixed(2)}
+            $${moneyCents(value.priceCents)}
           </div>
 
           <div class="product-quantity-container">
@@ -81,8 +82,10 @@ document.querySelectorAll('.js-add-to-cart')
     
         addToCart(productId);
         addedItem();
-    
+        console.log(cart);
     })
+
+    localStorage.setItem('cart', JSON.stringify(cart));
     
 })
   
