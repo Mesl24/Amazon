@@ -1,6 +1,7 @@
 import { products } from "../data/products.js";
 import { cart, removeItem} from "../data/cart.js";
 import { moneyCents } from "../data/money.js";
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 
 let summaryHTML = '';
@@ -51,7 +52,7 @@ cart.forEach((item) => {
                 <div class="delivery-option">
                 <input type="radio" checked
                     class="delivery-option-input"
-                    name="delivery-option-1">
+                    name="delivery-option-${matchingItem.id}">
                 <div>
                     <div class="delivery-option-date">
                     Tuesday, June 21
@@ -64,7 +65,7 @@ cart.forEach((item) => {
                 <div class="delivery-option">
                 <input type="radio"
                     class="delivery-option-input"
-                    name="delivery-option-1">
+                    name="delivery-option-${matchingItem.id}">
                 <div>
                     <div class="delivery-option-date">
                     Wednesday, June 15
@@ -77,7 +78,7 @@ cart.forEach((item) => {
                 <div class="delivery-option">
                 <input type="radio"
                     class="delivery-option-input"
-                    name="delivery-option-1">
+                    name="delivery-option-${matchingItem.id}">
                 <div>
                     <div class="delivery-option-date">
                     Monday, June 13
