@@ -64,10 +64,8 @@ function addedItem(){
     const cartQuantity = document.querySelector('.js-cart-quantity');
 
     let quantityItem = 0;
-    let qty;
     cart.forEach((item) => {
-        qty = item.quantity;
-        quantityItem += qty;
+        quantityItem += item.quantity;
         cartQuantity.innerHTML = quantityItem;
         
     })
@@ -82,10 +80,7 @@ document.querySelectorAll('.js-add-to-cart')
     
         addToCart(productId);
         addedItem();
-        console.log(cart);
     })
-
-    localStorage.setItem('cart', JSON.stringify(cart));
     
 })
   
