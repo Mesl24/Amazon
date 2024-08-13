@@ -1,4 +1,4 @@
-import {cart, addToCart} from '../data/cart.js';
+import {cart, addToCart, saveToStorage} from '../data/cart.js';
 import { products } from '../data/products.js';
 import { moneyCents } from '../data/money.js';
 let elementHTML = '';
@@ -67,10 +67,11 @@ function addedItem(){
     cart.forEach((item) => {
         quantityItem += item.quantity;
         cartQuantity.innerHTML = quantityItem;
-        
+
     })
-    
+    return quantityItem;
 }
+
 
   
 document.querySelectorAll('.js-add-to-cart')
@@ -85,6 +86,4 @@ document.querySelectorAll('.js-add-to-cart')
 })
   
 
-
-  
   
