@@ -1,5 +1,5 @@
 export function moneyCents(money){
    
-   return (money / 100).toFixed(2);
+   return ((money / 100)).toFixed(2);
    
 }
